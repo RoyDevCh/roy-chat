@@ -253,8 +253,9 @@
 
   function autoGrow(){
     $input.style.height = "auto";
-    var h = Math.min($input.scrollHeight, 180);
+    var h = Math.min($input.scrollHeight + 2, 180);
     $input.style.height = h + "px";
+    $input.style.overflowY = $input.scrollHeight > 180 ? "auto" : "hidden";
   }
 
   async function send(){
